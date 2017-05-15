@@ -1,0 +1,26 @@
+.btn {
+    height: 35px;
+    line-height: 35px;
+    border-radius: 2px;
+    display: inline-block;
+    text-align: center;
+    user-select: none;
+    text-align: center;
+    box-sizing: border-box;
+    font-size: 14px;
+    background-color: blue;
+}
+.btn-primary {
+    composes : btn;
+    border: 1px solid #E0E0E0;
+    background-image: -webkit-linear-gradient(top, #f9f9f9, #e7e9eb);
+    background-repeat: repeat-x;
+    color: #333;
+}
+.btn-blue {
+    composes : btn;
+    border: 1px solid #0B62BD;
+    background-image: -webkit-linear-gradient(top, #0e7bef, #0d73da);
+    background-repeat: repeat-x;
+    color: #fff;
+}

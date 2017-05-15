@@ -12,7 +12,7 @@ var useCssSourceMap = cssSourceMapDev || cssSourceMapProd
 
 module.exports = {
   entry: {
-    app: './src/main.js'
+    app: './src/index.js'
   },
   output: {
     path: config.build.assetsRoot,
@@ -20,13 +20,10 @@ module.exports = {
     filename: '[name].js'
   },
   resolve: {
-    extensions: ['', '.js', '.vue'],
+    extensions: ['', '.js'],
     fallback: [path.join(__dirname, '../node_modules')],
     alias: { //另外的别名
-      'vue$': 'vue/dist/vue.common.js',
       'src': path.resolve(__dirname, '../src'),
-      'assets': path.resolve(__dirname, '../src/assets'),
-      'components': path.resolve(__dirname, '../src/components')
     }
   },
   resolveLoader: {
@@ -34,12 +31,6 @@ module.exports = {
   },
   module: {
     preLoaders: [
-      {
-        test: /\.vue$/,
-        loader: 'eslint',
-        include: projectRoot,
-        exclude: /node_modules/
-      },
       {
         test: /\.js$/,
         loader: 'eslint',
@@ -49,14 +40,13 @@ module.exports = {
     ],
     loaders: [
       {
-        test: /\.vue$/,
-        loader: 'vue'
-      },
-      {
         test: /\.js$/,
         loader: 'babel',
         include: projectRoot,
-        exclude: /node_modules/
+        exclude: /node_modules/,
+        query: {
+            presets: ['react', 'es2015']
+        }
       },
       {
         test: /\.json$/,
@@ -82,13 +72,5 @@ module.exports = {
   },
   eslint: {
     formatter: require('eslint-friendly-formatter')
-  },
-  vue: {
-    loaders: utils.cssLoaders({ sourceMap: useCssSourceMap }),
-    postcss: [
-      require('autoprefixer')({
-        browsers: ['last 2 versions']
-      })
-    ]
   }
 }
