@@ -1,0 +1,77 @@
+.card{
+  width:396px;
+  padding:15px;
+  border:none;
+  background:white;
+  position:relative;
+  margin:16px 0px 0px 0px;
+  flex:2 100%;
+  z-index: 1000;
+  transition: opacity 0.5s;
+  color: black;
+  box-shadow: 1px 1px 18px #E3E3E3;
+  transition: opacity 1s;
+
+}
+.card:hover .menu{
+  opacity: 1;
+}
+.menu{
+  opacity: 0;
+  transition: all 0.2s;
+  position: absolute;
+  right: 10px;
+  top: 25px;
+
+}
+.menu:hover{
+  opacity: 1;
+  z-index: 99;
+  cursor: pointer;
+}
+.cardtitlebar{
+  height: 28px;
+  line-height: 28px;
+  padding: 13px 0 8px 13px;
+  vertical-align: bottom;
+}
+.cardtitlebar a{
+  line-height: 21px;
+  vertical-align: top;
+  font-family: Roboto;
+  letter-spacing: 2px;
+  font-size: 17px;
+  font-weight: 400;
+  margin-left: 4px;
+}
+.cardicon{
+  width: 24px;
+  height: 24px;
+  margin-top: -4px;
+  display: inline-block;
+}
+.drag{
+  position:absolute;
+  width:20px;
+  height:20px;
+  right:5px;
+  top:5px;
+  color: black;
+}
+.config{
+  position:absolute;
+  width:20px;
+  height:20px;
+  right:5px;
+  top:25px;
+}
+.column{
+  float: left;
+  flex:1;
+  padding:0px 8px 0px 8px;
+  display:flex;
+  flex-flow: row wrap;
+  max-width:396px;
+  align-items: flex-start;
+  align-content: flex-start;
+}
